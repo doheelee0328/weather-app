@@ -61,7 +61,7 @@ const Search = ({
     } = data
 
     const dates = forecastday.map((el) => [
-      el.hour.slice(7, 15).map((el) => el.item),
+      el.hour.slice(7, 15).map((el) => el.time),
       el.hour.slice(7, 15).map((el) => el.condition.icon),
       el.hour.slice(7, 15).map((el) => el.condition.text),
     ])
