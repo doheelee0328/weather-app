@@ -47,11 +47,17 @@ const Search = ({
       .then((data) => {
         const weatherData = getWeatherList(data)
 
-        setShowWeather(true)
-        setWeatherData(weatherData)
+        setShowWeather((previousState) => {
+          return { ...previousState, showWeather: true }
+        })
+        setWeatherData((previousState) => {
+          return { ...previousState, weatherData: weatherData }
+        })
       })
       .catch((err) => {
-        setWeatherError(err.message)
+        setWeatherError((previousState) => {
+          return { ...previousState, weatherError: err.message }
+        })
       })
   }
 
@@ -75,11 +81,17 @@ const Search = ({
       .then((data) => {
         const dates = getForecastList(data)
 
-        setForecastData([...dates])
-        setShowForecast(true)
+        setForecastData((previousState) => {
+          return { ...previousState, forecastData: [...dates] }
+        })
+        setShowForecast((previousState) => {
+          return { ...previousState, showForecast: true }
+        })
       })
       .catch((err) => {
-        setForecastDataError(err.message)
+        setForecastDataError((previousState) => {
+          return { ...previousState, forecastDataError: err.message }
+        })
       })
   }
 

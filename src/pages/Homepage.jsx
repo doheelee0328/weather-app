@@ -11,14 +11,25 @@ import Thunderstorm from '../images/thunder.jpeg'
 import { Wrapper } from './Homepage.styled'
 
 const HomePage = () => {
-  // store it in an object to avoid state hell
-  const [showWeather, setShowWeather] = useState(false)
-  const [showForecast, setShowForecast] = useState(false)
-  const [weatherData, setWeatherData] = useState([])
-  const [forecastData, setForecastData] = useState([])
-  const [weatherError, setWeatherError] = useState(null)
-  const [forecastDataError, setForecastDataError] = useState(null)
-  const [weatherCondition, setWeatherCondition] = useState(null)
+  const [weather, setWeather] = useState({
+    showWeather: false,
+    showForecast: false,
+    weatherData: [],
+    forecastData: [],
+    weatherError: null,
+    forecastDataError: null,
+    weatherCondition: null,
+  })
+
+  const {
+    showWeather,
+    showForecast,
+    weatherData,
+    forecastData,
+    weatherError,
+    forecastDataError,
+    weatherCondition,
+  } = weather
 
   const text = weatherData[3]
 
@@ -30,15 +41,25 @@ const HomePage = () => {
     const thunderRegex = /thundery|lightning/i
 
     if (snowRegex.test(text)) {
-      setWeatherCondition('snow')
+      setWeather((previousState) => {
+        return { ...previousState, weatherCondition: 'snow' }
+      })
     } else if (rainRegex.test(text)) {
-      setWeatherCondition('rain')
+      setWeather((previousState) => {
+        return { ...previousState, weatherCondition: 'rain' }
+      })
     } else if (cloudyRegex.test(text)) {
-      setWeatherCondition('cloudy')
+      setWeather((previousState) => {
+        return { ...previousState, weatherCondition: 'cloudy' }
+      })
     } else if (sunnyRegex.test(text)) {
-      setWeatherCondition('sunny')
+      setWeather((previousState) => {
+        return { ...previousState, weatherCondition: 'sunny' }
+      })
     } else if (thunderRegex.test(text)) {
-      setWeatherCondition('thunder')
+      setWeather((previousState) => {
+        return { ...previousState, weatherCondition: 'thunder' }
+      })
     }
   }, [text])
 
@@ -55,12 +76,12 @@ const HomePage = () => {
     >
       <div className={`background  ${showWeather && weatherCondition}`}>
         <Search
-          setShowWeather={setShowWeather}
-          setWeatherData={setWeatherData}
-          setForecastData={setForecastData}
-          setWeatherError={setWeatherError}
-          setForecastDataError={setForecastDataError}
-          setShowForecast={setShowForecast}
+          setShowWeather={setWeather}
+          setWeatherData={setWeather}
+          setForecastData={setWeather}
+          setWeatherError={setWeather}
+          setForecastDataError={setWeather}
+          setShowForecast={setWeather}
         ></Search>
         <div>
           <WeatherData
@@ -82,3 +103,13 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+/*
+const [showWeather, setShowWeather] = useState(false)
+  const [showForecast, setShowForecast] = useState(false)
+  const [weatherData, setWeatherData] = useState([])
+  const [forecastData, setForecastData] = useState([])
+  const [weatherError, setWeatherError] = useState(null)
+  const [forecastDataError, setForecastDataError] = useState(null)
+  const [weatherCondition, setWeatherCondition] = useState(null)
+*/
