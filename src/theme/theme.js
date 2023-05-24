@@ -4,7 +4,4 @@ export const theme = {
     black: '#000000',
     whiteOpacity: 'rgb(255,255,255, 60%)',
   },
-  fontSize: {
-    middle: '100px',
-  },
 }

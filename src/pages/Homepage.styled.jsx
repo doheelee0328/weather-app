@@ -1,19 +1,26 @@
 import styled from 'styled-components'
+import { theme } from '../theme/theme'
 
 export const Wrapper = styled.div`
   opacity: 0.8;
-  overflow: hidden;
-
+  height: 100%;
+  margin: auto;
   .background {
-    width: 100vw;
-    min-height: 100vh;
-    color: white;
     background-image: url(${(props) => props.background});
-    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding-top: 10%;
+    height: 100%;
+    object-fit: cover;
+
+    color: ${theme.color.white};
   }
 
   .background.rain {
@@ -32,7 +39,11 @@ export const Wrapper = styled.div`
     background-image: url(${(props) => props.thunder});
   }
 `
+
 export const WeatherContainer = styled.div`
-  width:50%
-  height:
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
 `

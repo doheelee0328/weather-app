@@ -66,23 +66,19 @@ const Search = ({
       forecast: { forecastday },
     } = data
 
-    const dates = forecastday.map((el) => [
-      el.hour.slice(7, 15).map((el) => el.time),
-      el.hour.slice(7, 15).map((el) => el.condition.icon),
-      el.hour.slice(7, 15).map((el) => el.condition.text),
-    ])
-
+    const dates = forecastday.map((el) => el.hour.slice(7, 15))
     return dates
   }
+  // map((el) => el.condition.text),
 
   const getForecastData = () => {
     fetch(`${FORECAST_FETCH_ENDPOINT}${input}&days=5`)
       .then((res) => handleFetchResponse(res, 'forecast'))
       .then((data) => {
         const dates = getForecastList(data)
-
+        console.log(data)
         setForecastData((previousState) => {
-          return { ...previousState, forecastData: [...dates] }
+          return { ...previousState, forecastData: dates }
         })
         setShowForecast((previousState) => {
           return { ...previousState, showForecast: true }

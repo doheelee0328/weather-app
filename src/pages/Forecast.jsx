@@ -1,24 +1,34 @@
-import { ForecastWrapper } from './Forecast.styled'
+import { ForecastWrapper, Error } from './Forecast.styled'
 
 const Forecast = ({ showForecast, forecastData, forecastDataError }) => {
   const displayForecastData = () => {
-    const [forecastTime, iconUrl, forecastInfo] = forecastData[0]
-
     return (
-      <div>
-        <p>{forecastTime}</p>
-        {iconUrl.map((url, index) => {
-          return <img src={url} alt='images' key={index} />
+      <ForecastWrapper>
+        {forecastData[0].map((el, index) => {
+          return (
+            <div className='forecast-background' key={index}>
+              <p className='forecast-time'>{el.time.split(' ')[1]}</p>
+              <img
+                className='forecast-image'
+                src={el.condition.icon}
+                alt={el.condition.text}
+              />
+              <p className='forecast-text'>{el.condition.text}</p>
+            </div>
+          )
         })}
-        <p>{forecastInfo}</p>
-      </div>
+      </ForecastWrapper>
     )
   }
 
   return (
-    <ForecastWrapper>
-      {showForecast ? displayForecastData() : <p>{forecastDataError}</p>}
-    </ForecastWrapper>
+    <>
+      {showForecast ? (
+        displayForecastData()
+      ) : (
+        <Error>{forecastDataError}</Error>
+      )}
+    </>
   )
 }
 

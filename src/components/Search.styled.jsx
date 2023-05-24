@@ -3,8 +3,8 @@ import { theme } from '../theme/theme'
 export const Wrapper = styled.form`
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  transform: translate(30px, 30px);
+  align-items: center;
+  transform: translate(50px, -50px);
 `
 
 export const InputWrapper = styled.div`
@@ -17,8 +17,11 @@ export const InputWrapper = styled.div`
     border-radius: 10px;
     text-align: center;
     font-weight: 900;
+    font-size: 15px;
+
     ::placeholder {
       color: ${theme.color.black};
+      text-align: center;
     }
   }
 `

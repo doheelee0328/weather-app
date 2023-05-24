@@ -8,7 +8,7 @@ import Snow from '../images/snow.jpeg'
 import Cloudy from '../images/cloudy.jpeg'
 import Sunny from '../images/sunny.jpg'
 import Thunderstorm from '../images/thunder.jpeg'
-import { Wrapper } from './Homepage.styled'
+import { Wrapper, WeatherContainer } from './Homepage.styled'
 
 const HomePage = () => {
   const [weather, setWeather] = useState({
@@ -63,8 +63,6 @@ const HomePage = () => {
     }
   }, [text])
 
-  //
-
   return (
     <Wrapper
       background={Background}
@@ -74,7 +72,7 @@ const HomePage = () => {
       sunny={Sunny}
       thunder={Thunderstorm}
     >
-      <div className={`background  ${showWeather && weatherCondition}`}>
+      <div className={`background ${showWeather && weatherCondition}`}>
         <Search
           setShowWeather={setWeather}
           setWeatherData={setWeather}
@@ -82,34 +80,23 @@ const HomePage = () => {
           setWeatherError={setWeather}
           setForecastDataError={setWeather}
           setShowForecast={setWeather}
-        ></Search>
-        <div>
+        />
+        <WeatherContainer>
           <WeatherData
             showWeather={showWeather}
             weatherData={weatherData}
             weatherError={weatherError}
-          ></WeatherData>
-        </div>
-        <div>
+          />
+
           <Forecast
             showForecast={showForecast}
             forecastData={forecastData}
             forecastDataError={forecastDataError}
-          ></Forecast>
-        </div>
+          />
+        </WeatherContainer>
       </div>
     </Wrapper>
   )
 }
 
 export default HomePage
-
-/*
-const [showWeather, setShowWeather] = useState(false)
-  const [showForecast, setShowForecast] = useState(false)
-  const [weatherData, setWeatherData] = useState([])
-  const [forecastData, setForecastData] = useState([])
-  const [weatherError, setWeatherError] = useState(null)
-  const [forecastDataError, setForecastDataError] = useState(null)
-  const [weatherCondition, setWeatherCondition] = useState(null)
-*/
