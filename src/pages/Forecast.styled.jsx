@@ -9,7 +9,6 @@ export const ForecastWrapper = styled.div`
   height: auto;
   margin: auto;
   gap: 30px;
-  padding-left: 60px;
 
   .forecast-background {
     height: 20vh;

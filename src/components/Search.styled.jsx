@@ -4,7 +4,7 @@ export const Wrapper = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(50px, -50px);
+  padding-left: 40px;
 `
 
 export const InputWrapper = styled.div`

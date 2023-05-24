@@ -20,7 +20,6 @@ export const CityWrapper = styled.div`
   .city {
     font-size: 35px;
     font-weight: 900;
-    padding-left: 20px;
 
     span {
       padding-left: 10px;
