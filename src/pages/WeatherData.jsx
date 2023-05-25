@@ -18,6 +18,7 @@ const WeatherData = ({ weatherData, showWeather, weatherError }) => {
       }
       return new Intl.DateTimeFormat('en-GB', options).format(new Date(date))
     }
+    // hello
     return (
       <>
         <WeatherWrapper>
