@@ -10,15 +10,14 @@ const WeatherData = ({ weatherData, showWeather, weatherError }) => {
   const displayWeatherData = () => {
     const [country, localTime, name, text, icon, temp] = weatherData
 
-    const formDate = (date) => {
-      const options = {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      }
-      return new Intl.DateTimeFormat('en-GB', options).format(new Date(date))
-    }
-    // hello
+    // const formDate = (date) => {
+    //   return new Date(date).toLocaleString('en-GB', {
+    //     day: 'numeric',
+    //     month: 'short',
+    //     year: 'numeric',
+    //   })
+    // }
+
     return (
       <>
         <WeatherWrapper>
@@ -27,7 +26,7 @@ const WeatherData = ({ weatherData, showWeather, weatherError }) => {
               {name}, <span>{country}</span>
             </p>
 
-            <p className='date'>{formDate(localTime)}</p>
+            <p className='date'>{localTime.split(' ')[0]}</p>
           </CityWrapper>
           <SideWrapper>
             <img src={icon} alt='weather images' />

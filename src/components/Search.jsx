@@ -73,7 +73,6 @@ const Search = ({
     const dates = forecastday.map((el) => el.hour.slice(7, 15))
     return dates
   }
-  // map((el) => el.condition.text),
 
   const getForecastData = () => {
     fetch(`${FORECAST_FETCH_ENDPOINT}${input}&days=5`)
