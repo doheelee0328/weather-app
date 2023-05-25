@@ -38,7 +38,7 @@ export const ForecastWrapper = styled.div`
 `
 export const Error = styled.p`
   font-size: 20px;
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 8px;
   text-align: center;
 `

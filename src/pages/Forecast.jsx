@@ -1,6 +1,6 @@
-import { ForecastWrapper, Error } from './Forecast.styled'
+import { ForecastWrapper } from './Forecast.styled'
 
-const Forecast = ({ showForecast, forecastData, forecastDataError }) => {
+const Forecast = ({ showForecast, forecastData }) => {
   const displayForecastData = () => {
     return (
       <ForecastWrapper>
@@ -21,15 +21,7 @@ const Forecast = ({ showForecast, forecastData, forecastDataError }) => {
     )
   }
 
-  return (
-    <>
-      {showForecast ? (
-        displayForecastData()
-      ) : (
-        <Error>{forecastDataError}</Error>
-      )}
-    </>
-  )
+  return <>{showForecast && displayForecastData()}</>
 }
 
 export default Forecast

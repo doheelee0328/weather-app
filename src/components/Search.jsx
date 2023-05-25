@@ -17,8 +17,9 @@ const Search = ({
   }
 
   const handleFetchResponse = (res, msg) => {
-    if (!res.ok) {
-      throw Error(`Cannot fetch the ${msg} data`)
+    if (res.status === 400) {
+      console.log(res)
+      throw Error(`Please enter the right city name! `)
     }
     return res.json()
   }
@@ -58,6 +59,9 @@ const Search = ({
         setWeatherError((previousState) => {
           return { ...previousState, weatherError: err.message }
         })
+        setShowWeather((previousState) => {
+          return { ...previousState, showWeather: false }
+        })
       })
   }
 
@@ -76,7 +80,7 @@ const Search = ({
       .then((res) => handleFetchResponse(res, 'forecast'))
       .then((data) => {
         const dates = getForecastList(data)
-        console.log(data)
+
         setForecastData((previousState) => {
           return { ...previousState, forecastData: dates }
         })
@@ -84,9 +88,13 @@ const Search = ({
           return { ...previousState, showForecast: true }
         })
       })
+
       .catch((err) => {
         setForecastDataError((previousState) => {
           return { ...previousState, forecastDataError: err.message }
+        })
+        setShowForecast((previousState) => {
+          return { ...previousState, showForecast: false }
         })
       })
   }
