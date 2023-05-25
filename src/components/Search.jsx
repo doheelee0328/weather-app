@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Wrapper, InputWrapper, Button } from './Search.styled'
-import { FORECAST_FETCH_ENDPOINT, WEATHER_FETCH_ENDPOINT } from './constants'
+// import { FORECAST_FETCH_ENDPOINT, WEATHER_FETCH_ENDPOINT } from './constants'
 
 const Search = ({
   setShowWeather,
@@ -43,7 +43,9 @@ const Search = ({
   }
 
   const getWeatherData = () => {
-    fetch(`${WEATHER_FETCH_ENDPOINT}${input}`)
+    fetch(
+      `http://api.weatherapi.com/v1/current.json?key=673230918b084e85977163833231802&q=${input}`
+    )
       .then((res) => handleFetchResponse(res, 'current weather'))
       .then((data) => {
         const weatherData = getWeatherList(data)
@@ -76,7 +78,9 @@ const Search = ({
   // map((el) => el.condition.text),
 
   const getForecastData = () => {
-    fetch(`${FORECAST_FETCH_ENDPOINT}${input}&days=5`)
+    fetch(
+      `http://api.weatherapi.com/v1/forecast.json?key=673230918b084e85977163833231802&q=${input}&days=5`
+    )
       .then((res) => handleFetchResponse(res, 'forecast'))
       .then((data) => {
         const dates = getForecastList(data)
