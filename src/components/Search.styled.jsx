@@ -20,7 +20,7 @@ export const InputWrapper = styled.div`
     font-size: 15px;
 
     ::placeholder {
-      color: ${theme.color.black};
+      color: '#D9D9D9';
       text-align: center;
     }
   }
