@@ -11,11 +11,12 @@ const WeatherData = ({ weatherData, showWeather, weatherError }) => {
     const [country, localTime, name, text, icon, temp] = weatherData
 
     const formDate = (date) => {
-      return new Date(date).toLocaleString('en-GB', {
+      const options = {
         day: 'numeric',
         month: 'short',
         year: 'numeric',
-      })
+      }
+      return new Intl.DateTimeFormat('en-GB', options).format(new Date(date))
     }
     return (
       <>
