@@ -6,20 +6,13 @@ The React Weather App is a web application that provides weather details based o
 
 - Open a terminal or command prompt.
 
-- Navigate to the project directory using the cd command. For example, if your project is located in a folder called "weather-app", you would run:
+- Navigate to the project directory using the cd command. For example, if your project is located in a folder called "weather-app", you would run "cd weather-app"
 
-"cd weather-app"
+- Run the following command to install all the project dependencies listed in the package.json file with "npm install"
 
-- Run the following command to install all the project dependencies listed in the package.json file:
+- Once the dependencies are installed, you can start the development server by running the following command "npm start"
 
-"npm install"
-
-- Once the dependencies are installed, you can start the development server by running the following command:
-
-"npm start"
-
-The app will now be running locally on your machine. You can open a web browser and visit http://localhost:3000 to view the app.
-
+- The app will now be running locally on your machine. You can open a web browser and visit http://localhost:3000 to view the app.
 
 ## Design 
 
