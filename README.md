@@ -4,7 +4,7 @@ The React Weather App is a web application that provides weather details based o
 
 ## To run the React Weather App, you can follow these steps:
 
-## Note!  To use this weather app, you will need to obtain an API key. The API key allows the app to fetch real-time weather data.
+### Note!  To use this weather app, you will need to obtain an API key. The API key allows the app to fetch real-time weather data.
 
 - Open a terminal or command prompt.
 
