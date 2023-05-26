@@ -32,14 +32,15 @@ Background Images:
 
 ## Usage
 
-- You will see a user interface where you can enter the city and country for which you want to check the weather.
 
-- In the input field provided, enter the name of the city and the country (optional but recommended for accurate results). For example, you can enter "New York" or "London, UK".
+- In the provided input field, enter the name of the city and optionally the country for which you want to check the weather. For example, you can enter "New York" or "London, UK".
 
-- Hit Enter on your keyboard to submit the input.
+- Press the Enter key on your keyboard to proceed.
 
-- The app will then fetch the weather data for the specified location from the weather API.
+- The app will fetch the latest weather data for the specified location from the weather API.
 
-- After a brief loading period, the app will display the weather details on the screen. This may include information such as temperature. 
+- After a short loading period, the app will display the weather details on the screen, which may include information such as temperature
 
-- Observe the background image of the app, which dynamically changes based on the current weather condition
+- Take note of the background image of the app, as it dynamically changes to reflect the current weather condition of the specified location.
+
+- In case you encounter an error message saying "Please enter the right city name", it means the provided location was not recognized. Please ensure you have entered a valid city name. 
