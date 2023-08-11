@@ -45,4 +45,7 @@ export const WeatherContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1050px) {
+    width: 90%;
+  }
 `

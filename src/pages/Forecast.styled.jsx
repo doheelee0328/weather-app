@@ -5,27 +5,57 @@ export const ForecastWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  height: auto;
+
   margin: auto;
-  gap: 30px;
+  gap: 20px;
 
   .forecast-background {
-    height: 20vh;
-
-    border-radius: 20px;
+    /* height: 10vh;
+    /* border-radius: 20px; */
+    /* width: 5w; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    @media (max-width: 660px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+    }
   }
   .forecast-time {
     font-size: 20px;
+    margin-bottom: 20px;
+    @media (max-width: 1050px) {
+      font-size: 15px;
+    }
+    @media (max-width: 660px) {
+      font-size: 10px;
+    }
   }
 
   .forecast-text {
     text-align: center;
+    margin-top: 20px;
+    @media (max-width: 1050px) {
+      font-size: 15px;
+    }
+    @media (max-width: 660px) {
+      font-size: 8px;
+    }
+  }
+
+  .forecast-image {
+    width: 5vw;
+    height: 100%;
+
+    @media (max-width: 660px) {
+      width: 50%;
+      height: 100%;
+    }
   }
 
   @media (max-width: 774px) {
