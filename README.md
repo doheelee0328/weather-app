@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# React Weather App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The React Weather App is a web application that provides weather details based on the city and country entered by the user. The app dynamically adjusts its background images to reflect the current weather condition.
 
-## Available Scripts
+## To run the React Weather App, you can follow these steps:
 
-In the project directory, you can run:
+### Note!  To use this weather app, you will need to obtain an API key. The API key allows the app to fetch real-time weather data.
 
-### `npm start`
+- Open a terminal or command prompt.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Navigate to the project directory using the cd command. For example, if your project is located in a folder called "weather-app", you would run "cd weather-app"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Run the following command to install all the project dependencies listed in the package.json file with "npm install"
 
-### `npm test`
+- Once the dependencies are installed, you can start the development server by running the following command "npm start"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The app will now be running locally on your machine. You can open a web browser and visit http://localhost:3000 to view the app.
 
-### `npm run build`
+## Design 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For the React Weather App, the Figma tool was used to create a visually appealing and user-friendly design. The design incorporates different background images that represent the current weather condition.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Background Images:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Sunny
+- Cloudy
+- Rain
+- Snow
+- Storm
 
-### `npm run eject`
+![Screenshot 2023-05-26 at 01 25 15](https://github.com/doheelee0328/weather-app/assets/112406576/c0116877-c36b-4eb9-b4f7-bf569bc3f00a)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- In the provided input field, enter the name of the city and optionally the country for which you want to check the weather. For example, you can enter "New York" or "London, UK".
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Press the Enter key on your keyboard to proceed.
 
-## Learn More
+- The app will fetch the latest weather data for the specified location from the weather API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- After a short loading period, the app will display the weather details on the screen, which may include information such as temperature
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Take note of the background image of the app, as it dynamically changes to reflect the current weather condition of the specified location.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- In case you encounter an error message saying "Please enter the right city name", it means the provided location was not recognized. Please ensure you have entered a valid city name. 
