@@ -13,6 +13,7 @@ const Forecast = ({ showForecast, forecastData }) => {
                 src={el.condition.icon}
                 alt={el.condition.text}
               />
+              <div>hello</div>
               <p className='forecast-text'>{el.condition.text}</p>
             </div>
           )
